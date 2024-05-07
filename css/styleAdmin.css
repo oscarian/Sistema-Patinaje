@@ -20,7 +20,7 @@ h1 {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #0e2238;
+    background-color: #A50000 ;
 }
 
 .wrapper {
@@ -40,7 +40,7 @@ body {
     min-width: 70px;
     z-index: 1000;
     transition: all .25s ease-in-out;
-    background-color: #0e2238;
+    background:linear-gradient(red, rgb(200, 255, 0)); ;
     display: flex;
     flex-direction: column;
 }
@@ -109,7 +109,7 @@ a.sidebar-link:hover {
     position: absolute;
     top: 0;
     left: 70px;
-    background-color: #0e2238;
+    background-color: #A50000 ;
     padding: 0;
     min-width: 15rem;
     display: none;
@@ -139,3 +139,45 @@ a.sidebar-link:hover {
     transform: rotate(45deg);
     transition: all .2s ease-out;
 }
+
+.bg-image {
+    background-image: url('../img/logo.png');
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+nav {
+    margin: 10px;
+    /* Añade un borde superior y uno inferior */
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    /* Otros estilos opcionales */
+    padding: 10px; /* Añade un poco de espacio alrededor del contenido */
+    background-color: #f8f9fa; /* Color de fondo opcional */
+}
+
+.toggle-btn i {
+    color: black; /* Cambia el color aquí */
+}
+
+.page {
+    margin: 0;
+    min-height: 70vh;
+    background-image: url(../img/logoPatinaje.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.page::before {
+    content: ""
+    ;
+    width: 100%;
+    min-height: 75vh;
+    position: absolute;
+    top: 30;
+    left: 0;
+    background: white;
+    opacity: 0.9;
+}
+
