@@ -1,3 +1,20 @@
 .red-color{
     background-color: #A50000 ;
 }
+
+.red-text{
+    color:#A50000;
+}
+
+.first-navbar{
+    background: linear-gradient(to right,yellow ,#A50000 15%);
+}
+
+
+
+.footer{
+    /*background: linear-gradient(to left, yellow ,#A50000 15%);*/
+    /*background: #A50000;*/
+    background: radial-gradient(circle at right, rgba(27,3,3,1) 0%, yellow 0%, #A50000 15%);
+
+}
