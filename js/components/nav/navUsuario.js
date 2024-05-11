@@ -4,7 +4,7 @@ export function crearNavUsuario() {
   //var nav = document.getElementById("nav");
   var respuestaHTML = "";
   respuestaHTML = `
-  <nav class="navbar navbar-expand-lg first-navbar">
+  <nav class="navbar navbar-expand-sm first-navbar">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
@@ -13,14 +13,14 @@ export function crearNavUsuario() {
                     <a class="link-light" href="#">Inicio Sesion/Registrarse</a>
                 </li>
                 <li class="nav-item px-2">
-                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-instagram fs-5 "></i>
                 </li>
                 </li>
                 <li class="nav-item px-2">
-                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-facebook fs-5"></i>
                 </li>
                 <li class="nav-item px-2">
-                    <i class="bi bi-whatsapp"></i>
+                    <i class="bi bi-whatsapp fs-5"></i>
                 </li>
             </ul>
             </div>
@@ -37,7 +37,6 @@ export function crearNavUsuario() {
                         <p class="d-inline-block red-text">ASOCIACION DE PATINAJE</p>
                     </a>
                 </li>
-
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item fs-4">
@@ -56,7 +55,7 @@ export function crearNavUsuario() {
                     <a class="nav-link active" href="#">Tienda</a>
                 </li>
                 <li class="nav-item mx-2 mt-2">
-                    <i class="bi bi-cart"></i>
+                    <i class="bi bi-cart fs-4"></i>
                 </li>
             </ul>
         </div>
