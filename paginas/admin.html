@@ -28,7 +28,7 @@
             </div>
             <ul class="sidebar-nav">
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="#prueba" class="sidebar-link">
                         <i class="bi bi-file-earmark"></i>
                         <span>Pruebas</span>
                     </a>
@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="#deportista" class="sidebar-link">
                         <i class="bi bi-person-heart"></i>
                         <span>Deportistas</span>
                     </a>
@@ -132,6 +132,67 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Nuevo formulario de Deportistas -->
+                <!-- formulario_deportistas.html -->
+
+                <div id="contenedorDeportistas" class="container-fluid" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h2>Formulario de Deportistas</h2>
+                            <form id="formularioDeportista">
+                                <div class="form-group">
+                                    <label for="nombreDeportistaInput">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombreDeportistaInput"
+                                        placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidosDeportistaInput">Apellidos:</label>
+                                    <input type="text" class="form-control" id="apellidosDeportistaInput"
+                                        placeholder="Ingrese los apellidos">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cedulaDeportistaInput">Número de Cédula:</label>
+                                    <input type="text" class="form-control" id="cedulaDeportistaInput"
+                                        placeholder="Ingrese el número de cédula">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fechaNacimientoInput">Fecha de Nacimiento:</label>
+                                    <input type="date" class="form-control" id="fechaNacimientoInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fotoCedulaInput">Foto de Cédula:</label>
+                                    <input type="file" class="form-control" id="fotoCedulaInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fotoDeportistaInput">Foto de Deportista:</label>
+                                    <input type="file" class="form-control" id="fotoDeportistaInput">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-secondary" id="cancelarFormulario">Cancelar</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h2>Lista de Deportistas</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">Cédula</th>
+                                        <th scope="col">Fecha de Nacimiento</th>
+                                        <th scope="col">Foto de Cédula</th>
+                                        <th scope="col">Foto de Deportista</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaDeportistasBody">
+                                    <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
             </main>
         </div>
     </div>

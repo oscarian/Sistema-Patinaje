@@ -1,86 +1,89 @@
-const hamBurger = document.querySelector(".toggle-btn");
-
-hamBurger.addEventListener("click", function () {
-  document.querySelector("#sidebar").classList.toggle("expand");
-});
-
-const enlacePruebas = document.querySelector('.sidebar-item a[href="#"]');
-
-enlacePruebas.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    const contenedorPrueba = document.getElementById('contenedorPrueba');
-    contenedorPrueba.style.display = 'block';
-});
-
-/* PARTE DE LAS PRUEBAS */
 document.addEventListener('DOMContentLoaded', function() {
-  const formulario = document.querySelector('form');
-  const tablaPruebas = document.getElementById('tabla-pruebas').querySelector('tbody');
-  let listaPruebas = [];
+    const hamBurger = document.querySelector(".toggle-btn");
+    const formularioPrueba = document.querySelector('#contenedorPrueba');
+    const formularioDeportista = document.querySelector('#contenedorDeportistas');
+    let listaPruebas = [];
 
-  formulario.addEventListener('submit', function(event) {
-      event.preventDefault();
+    hamBurger.addEventListener("click", function () {
+        document.querySelector("#sidebar").classList.toggle("expand");
+    });
 
-      const id = document.getElementById('pruebaInput').value;
-      const nombre = document.getElementById('nombrePruebaInput').value;
-      const descripcion = document.getElementById('descripcionPruebaInput').value;
+    function mostrarFormulario(formulario) {
+        // Ocultar todos los formularios
+        formularioPrueba.style.display = 'none';
+        formularioDeportista.style.display = 'none';
 
-      const nuevaPrueba = {
-          id: id,
-          nombre: nombre,
-          descripcion: descripcion
-      };
+        // Mostrar el formulario deseado
+        formulario.style.display = 'block';
+    }
 
-      listaPruebas.push(nuevaPrueba);
-      actualizarTabla();
-      formulario.reset();
-  });
+    function agregarPrueba() {
+        const id = document.getElementById('pruebaInput').value;
+        const nombre = document.getElementById('nombrePruebaInput').value;
+        const descripcion = document.getElementById('descripcionPruebaInput').value;
 
-  tablaPruebas.addEventListener('click', function(event) {
-      const fila = event.target.closest('tr');
+        const nuevaPrueba = {
+            id: id,
+            nombre: nombre,
+            descripcion: descripcion
+        };
 
-      if (!fila) return;
+        listaPruebas.push(nuevaPrueba);
+        actualizarTabla();
+        formularioPrueba.reset();
+    }
 
-      if (event.target.classList.contains('edit')) {
-          const id = fila.cells[1].textContent;
-          const nombre = fila.cells[2].textContent;
-          const descripcion = fila.cells[3].textContent;
+    function actualizarTabla() {
+        const tablaPruebas = document.getElementById('tabla-pruebas').querySelector('tbody');
+        tablaPruebas.innerHTML = '';
+        listaPruebas.forEach(function(prueba, index) {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${prueba.id}</td>
+                <td>${prueba.nombre}</td>
+                <td>${prueba.descripcion}</td>
+                <td>
+                    <a href="#editPrueba" class="edit" style="color: black">
+                        <i class="bi bi-pencil-square bi-3x"></i>
+                    </a>
+                    <a href="#deletePrueba" class="delete" style="color: black">
+                        <i class="bi bi-file-earmark-x bi-3x"></i>
+                    </a>
+                </td>
+            `;
+            tablaPruebas.appendChild(fila);
+        });
+    }
 
-          document.getElementById('pruebaInput').value = id;
-          document.getElementById('nombrePruebaInput').value = nombre;
-          document.getElementById('descripcionPruebaInput').value = descripcion;
-      }
+    formularioPrueba.addEventListener('submit', function(event) {
+        event.preventDefault();
+        agregarPrueba();
+    });
 
-      if (event.target.classList.contains('delete')) {
-          const confirmar = confirm('¿Estás seguro de eliminar esta prueba?');
-          if (confirmar) {
-              const indice = fila.rowIndex - 1;
-              listaPruebas.splice(indice, 1);
-              actualizarTabla();
-          }
-      }
-  });
+    // Event listener para el enlace de Pruebas
+    document.querySelector('.sidebar-item a[href="#prueba"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        mostrarFormulario(formularioPrueba);
+    });
 
-  function actualizarTabla() {
-      tablaPruebas.innerHTML = '';
-      listaPruebas.forEach(function(prueba, index) {
-          const fila = document.createElement('tr');
-          fila.innerHTML = `
-              <td>${index + 1}</td>
-              <td>${prueba.id}</td>
-              <td>${prueba.nombre}</td>
-              <td>${prueba.descripcion}</td>
-              <td>
-                  <a href="#editPrueba" class="edit" style="color: black">
-                      <i class="bi bi-pencil-square bi-3x"></i>
-                  </a>
-                  <a href="#deletePrueba" class="delete" style="color: black">
-                      <i class="bi bi-file-earmark-x bi-3x"></i>
-                  </a>
-              </td>
-          `;
-          tablaPruebas.appendChild(fila);
-      });
-  }
+    // Event listener para el enlace de Deportista
+    document.querySelector('.sidebar-item a[href="#deportista"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        mostrarFormulario(formularioDeportista);
+    });
+
+    // Manejo del botón cancelar en el formulario de deportistas
+    const cancelarFormularioDeportistaBtn = formularioDeportista.querySelector("#cancelarFormulario");
+    cancelarFormularioDeportistaBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        formularioDeportista.reset();
+    });
+
+    // Manejo del envío del formulario de deportistas
+    formularioDeportista.addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Aquí puedes agregar la lógica para guardar los datos del deportista y actualizar la tabla
+        formularioDeportista.reset(); // Por ahora, solo reseteamos el formulario
+    });
 });
-
