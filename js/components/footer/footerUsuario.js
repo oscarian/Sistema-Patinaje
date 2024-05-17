@@ -40,10 +40,7 @@ export function crearFootterUsuario() {
 
     <div class="col mb-3">
         <h5 class="fs-3">Encuentranos</h5>
-        <a class="navbar-brand fs-2" href="#">
-            <img src="img/ubicacion.jpg" alt="Logo" width="200" height="200" class="d-inline-block align-text">
-
-        </a>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.7297960760498!2d-79.02338412553983!3d-2.8940308970824424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd22a7ddde6ff3%3A0xc8680dd1b8adccd7!2sFederaci%C3%B3n%20Deportiva%20del%20Azuay!5e0!3m2!1ses-419!2sec!4v1715555650131!5m2!1ses-419!2sec" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </footer>`
     document.getElementById("footer").innerHTML=respuestaHTML;
