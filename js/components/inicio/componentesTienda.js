@@ -4,12 +4,11 @@ import {cargarProductos, filtrarProductos} from "../../utils/scriptsTienda.js";
 
 export function crearTienda(){
     var respuestaHTML = "";
-    respuestaHTML = `<h1>Tienda Patinaje</h1>
+    respuestaHTML = `<h1 id="titulo">TIENDA</h1>
+    
     <div id="categorias">
-        
-        <h3>CATEGORIAS</h3>
         <div class="submenu">
-            <span>HOMBRE</span>
+            <button>HOMBRE</button>
             <div class="submenu-content">
                 <a href="#" class="subcategoria" data-etiqueta="hombreRopaDeportiva">ROPA</a>
                 <a href="#" class="subcategoria" data-etiqueta="hombreCalzado">CALZADO</a>
@@ -17,7 +16,7 @@ export function crearTienda(){
             </div>
         </div>
         <div class="submenu">
-            <span>MUJER</span>
+            <button>MUJER</button>
             <div class="submenu-content">
                 <a href="#" class="subcategoria" data-etiqueta="mujerRopaDeportiva">ROPA</a>
                 <a href="#" class="subcategoria" data-etiqueta="mujerCalzado">CALZADO</a>
@@ -25,7 +24,7 @@ export function crearTienda(){
             </div>
         </div>
         <div class="submenu">
-            <span>NIÑO</span>
+            <button>NIÑO</button>
             <div class="submenu-content">
                 <a href="#" class="subcategoria" data-etiqueta="ninoRopaDeportiva">ROPA</a>
                 <a href="#" class="subcategoria" data-etiqueta="ninoCalzado">CALZADO</a>
@@ -33,8 +32,10 @@ export function crearTienda(){
             </div>
         </div>
     </div>
-    <hr>
-    <div id="productos"></div>`
+
+    <div id="productos"></div>
+    `
+    
     
 
     document.getElementById("contenedor").innerHTML = respuestaHTML;
