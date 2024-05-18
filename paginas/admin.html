@@ -47,7 +47,11 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+<<<<<<< HEAD
                     <a href="#clubes" class="sidebar-link">
+=======
+                    <a href="#club" class="sidebar-link">
+>>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
                         <i class="bi bi-bank"></i>
                         <span>Clubes</span>
                     </a>
@@ -59,7 +63,11 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
+<<<<<<< HEAD
                     <a href="#rankings" class="sidebar-link">
+=======
+                    <a href="#ranking" class="sidebar-link">
+>>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
                         <i class="bi bi-boxes"></i>
                         <span>Rankings</span>
                     </a>
@@ -133,6 +141,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div id="contenedorCategoria" class="container-fluid" style="display: none;">
                     <div class="row">
                         <div class="col-md-6 mb-4">
@@ -187,11 +196,67 @@
                                 </thead>
                                 <tbody>
 
+=======
+
+
+                <!-- Nuevo formulario de Clubes -->
+                <!-- formulario_clubes.html -->
+
+                <div id="contenedorClubes" class="container-fluid" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h2>Formulario de Clubes</h2>
+                            <form id="formulario_clubes">
+                                <div class="form-group">
+                                    <label for="idClubInput">ID</label>
+                                    <input type="text" class="form-control" id="idClubInput"
+                                        placeholder="Ingrese el ID del club">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombreClubInput">Nombre:</label>
+                                    <input type="text" class="form-control" id="nombreClubInput"
+                                        placeholder="Ingrese el nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fundacionInput">Fecha de Fundación:</label>
+                                    <input type="date" class="form-control" id="fundacionInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcionClubInput">Descripción:</label>
+                                    <textarea class="form-control" id="descripcionClubInput" rows="3"
+                                        placeholder="Ingrese la descripción"></textarea>
+                                </div>
+                                
+                            
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-secondary" id="cancelarFormulario">Cancelar</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h2>Lista de Clubes</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Fecha de Fundación</th>
+                                        <th scope="col">Descripción</th>       
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaCubesBody">
+                                    <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+>>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
                 
                 <!-- Nuevo formulario de Deportistas -->
                 <!-- formulario_deportistas.html -->
@@ -252,6 +317,68 @@
                         </div>
                     </div>
                 </div>
+
+
+
+                 <!-- Nuevo formulario de Deportistas -->
+                <!-- formulario_ranking.html -->
+
+                <div id="contenedorRanking" class="container-fluid" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h2>Ránkings</h2>
+                            <form id="formularioRanking">
+                                
+                                <div class="form-group">
+                                    <label for="idRankingInput">ID Ránking:</label>
+                                    <input type="text" class="form-control" id="idRankingInput"
+                                        placeholder="Ingrese el ID del Ranking">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="nombreRankingInput">Nombre del Ránking:</label>
+                                    <input type="text" class="form-control" id="nombreRankingInput"
+                                        placeholder="Ingrese el nombre">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="inicioInput">Fecha de Inicio:</label>
+                                    <input type="date" class="form-control" id="inicioInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="finalInput">Fecha Final:</label>
+                                    <input type="date" class="form-control" id="finalInput">
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="button" class="btn btn-secondary" id="cancelarFormulario">Cancelar</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h2>Ranking</h2>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Fecha de Inicio</th>
+                                        <th scope="col">Fecha Final</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaDeportistasBody">
+                                    <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
 
             </main>
         </div>

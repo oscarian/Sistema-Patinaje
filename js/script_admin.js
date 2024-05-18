@@ -2,7 +2,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamBurger = document.querySelector(".toggle-btn");
     const formularioPrueba = document.querySelector('#contenedorPrueba');
     const formularioDeportista = document.querySelector('#contenedorDeportistas');
+<<<<<<< HEAD
     const formularioCategoria = document.querySelector('#contenedorCategoria');
+=======
+    const formularioClub = document.querySelector('#contenedorClubes');
+    const formularioRanking = document.querySelector('#contenedorRanking');
+
+    
+>>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
     let listaPruebas = [];
     let listaCategorias = [];
 
@@ -14,7 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ocultar todos los formularios
         formularioPrueba.style.display = 'none';
         formularioDeportista.style.display = 'none';
+<<<<<<< HEAD
         formularioCategoria.style.display = 'none'
+=======
+        formularioClub.style.display= 'none';
+
+>>>>>>> 66abab64bf1aea4b6774710598770b8d603f5ec1
         // Mostrar el formulario deseado
         formulario.style.display = 'block';
     }
@@ -122,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarFormulario(formularioPrueba);
     });
 
+
     // Event listener para el enlace de Deportista
     document.querySelector('.sidebar-item a[href="#deportista"]').addEventListener('click', function(event) {
         event.preventDefault();
@@ -147,4 +160,50 @@ document.addEventListener('DOMContentLoaded', function() {
         // Aquí puedes agregar la lógica para guardar los datos del deportista y actualizar la tabla
         formularioDeportista.reset(); // Por ahora, solo reseteamos el formulario
     });
+
+
+
+    // Event listener para el enlace de Club
+
+    document.querySelector('.sidebar-item a[href="#club"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        mostrarFormulario(formularioClub);
+    });
+
+    // Manejo del botón cancelar en el formulario de deportistas
+    const cancelarFormularioClubBtn = formularioClub.querySelector("#cancelarFormulario");
+    cancelarFormularioClubBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        formularioClub.reset();
+    });
+
+    // Manejo del envío del formulario de deportistas
+    formularioClub.addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Aquí puedes agregar la lógica para guardar los datos del deportista y actualizar la tabla
+        formularioClub.reset(); // Por ahora, solo reseteamos el formulario
+    });
+
+
+
+    document.querySelector('.sidebar-item a[href="#ranking"]').addEventListener('click', function(event) {
+        event.preventDefault();
+        mostrarFormulario(formularioRanking);
+    });
+
+    // Manejo del botón cancelar en el formulario de deportistas
+    const cancelarFormularioRankingBtn = formularioClub.querySelector("#cancelarFormulario");
+    cancelarFormularioRankingBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        formularioRanking.reset();
+    });
+
+    // Manejo del envío del formulario de deportistas
+    formularioRanking.addEventListener("submit", function(event) {
+        event.preventDefault();
+        // Aquí puedes agregar la lógica para guardar los datos del deportista y actualizar la tabla
+        formularioClub.reset(); // Por ahora, solo reseteamos el formulario
+    });
+
+
 });
